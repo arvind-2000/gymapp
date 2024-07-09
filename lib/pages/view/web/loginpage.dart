@@ -1,7 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:gymwebapp/controller/tapcontroller.dart';
 import 'package:gymwebapp/router/router.gr.dart';
@@ -21,7 +19,7 @@ class WebLoginPage extends StatelessWidget {
         child: Container(
           child: Row(
             children: [
-              Expanded(
+            MediaQuery.sizeOf(context).width<700?const SizedBox(): Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 30),
                   child: Container(
