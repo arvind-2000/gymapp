@@ -1,0 +1,2 @@
+List<String> personal = ["3 Months","15% Discount","Rs. 8920","6 Months","20% Discount","Rs. 16800","12 Months","25% Discount","Rs. 31500"];
+List<String> general = ["3 Months","15% Discount","Rs. 8920","6 Months","20% Discount","Rs. 16800","12 Months","25% Discount","Rs. 31500"];

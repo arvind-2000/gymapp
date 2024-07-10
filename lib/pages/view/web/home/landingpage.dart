@@ -5,6 +5,8 @@ import 'package:gymwebapp/widget/navbar/navbarwidget.dart';
 
 import 'package:gymwebapp/widget/responsivecontainer/responsivecontainer.dart';
 
+import '../../../../widget/overlaycard.dart';
+
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key, required this.keys, });
   final GlobalKey keys;
@@ -22,7 +24,7 @@ class LandingPage extends StatelessWidget {
             Positioned.fill(
             
               
-              child: Container(
+              child: OverlayCard(
         
         child: Image.asset('assets/images/first.jpg',fit: BoxFit.cover,),)),
             Column(

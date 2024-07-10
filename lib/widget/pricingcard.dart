@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:gymwebapp/config/colors.dart';
+import 'package:gymwebapp/widget/actionbutton.dart';
 import 'package:gymwebapp/widget/cardwithshadow.dart';
-import 'package:gymwebapp/widget/titletext.dart';
+
 
 class PricingCard extends StatelessWidget {
-  const PricingCard({super.key});
-  
+  const PricingCard({ required this.child});
+
+  final Widget child;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 400,
+      height: 550,
       width: 300,
-      child: CardWithShadow(child: Column(
-        children: [
-
-          Expanded(child: Container(child: Center(child: TitleText(text: "Rs.1500")),color: Theme.of(context).colorScheme.secondary,)),
-          Expanded(
-            flex: 2,
-            child: 
-          Container())
-        ],
-      ),isshadow: true,shadowcolor: Theme.of(context).colorScheme.secondary.withOpacity(0.1),color: blackalt,),
+      child: CardWithShadow(
+        radius: BorderRadius.zero,
+        isBorder: true,
+        padding: const EdgeInsets.all(16),
+        // isshadow: true,
+        color: Theme.of(context).colorScheme.primary,
+        child:child),
     );
   }
 }
