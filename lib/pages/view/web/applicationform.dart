@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 
 @RoutePage()
 class GymFormPage extends StatefulWidget {
@@ -23,7 +22,9 @@ class _GymFormPageState extends State<GymFormPage> {
     return Scaffold(
       body: SafeArea(
         child: Container(
+
           decoration: const BoxDecoration(
+          
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -44,6 +45,7 @@ class _GymFormPageState extends State<GymFormPage> {
                     right: constraints.maxWidth < 600 ? 0 : 50,
                     top: constraints.maxWidth < 600 ? 0 : 30),
                 child: Card(
+                  color: Theme.of(context).colorScheme.primary,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
                   elevation: 10,
@@ -56,11 +58,16 @@ class _GymFormPageState extends State<GymFormPage> {
                             const SizedBox(
                               height: 10,
                             ),
-                            Flexible(
-                              child: Image.asset(
-                                'assets/images/logo.png',
-                                height: 80,
-                                fit: BoxFit.contain,
+                            InkWell(
+                              onTap: (){
+                                context.router.replaceNamed('/');
+                              },
+                              child: Flexible(
+                                child: Image.asset(
+                                  'assets/images/logo.png',
+                                  height: 80,
+                                  fit: BoxFit.contain,
+                                ),
                               ),
                             ),
                             const Text(
@@ -97,7 +104,7 @@ class _GymFormPageState extends State<GymFormPage> {
                                     constraints.maxWidth < 600 ? 15 : 30),
                             child: Container(
                               padding: const EdgeInsets.all(8.0),
-                              color: Colors.white,
+                              color: Theme.of(context).colorScheme.primary,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -262,7 +269,7 @@ class _GymFormPageState extends State<GymFormPage> {
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 18,
-          color: Colors.red.shade700,
+          color: Theme.of(context).colorScheme.secondary,
         ),
       ),
     );
@@ -275,8 +282,10 @@ class _GymFormPageState extends State<GymFormPage> {
         decoration: InputDecoration(
           labelText: label,
           filled: true,
-          fillColor: Colors.white,
-          border: const OutlineInputBorder(),
+          fillColor: Theme.of(context).colorScheme.primary.withOpacity(0.4),
+          border: const OutlineInputBorder(
+
+          ),
         ),
       ),
     );

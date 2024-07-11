@@ -3,13 +3,12 @@ import 'package:gymwebapp/widget/actionbutton.dart';
 import 'package:gymwebapp/widget/normaltext.dart';
 
 class NavBar extends StatelessWidget {
-  const NavBar({super.key, required this.keyss});
-  final Function(GlobalKey) keyss;
+  const NavBar({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 80,
-      padding:EdgeInsets.symmetric(vertical: 16,horizontal: 32),
+      padding:const EdgeInsets.symmetric(vertical: 16,horizontal: 32),
       color:Theme.of(context).colorScheme.primary.withOpacity(0.4),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -21,13 +20,13 @@ class NavBar extends StatelessWidget {
           ),
           Row(
             children: [
-              NormalText(text: "Home".toUpperCase(),changes: keyss,),
+              NormalText(text: "Home".toUpperCase()),
               SizedBox(width: 40,),
-              NormalText(text: "Pricing".toUpperCase(),changes: keyss,),
+              NormalText(text: "Pricing".toUpperCase()),
                   SizedBox(width: 40,),
-              NormalText(text: "Services".toUpperCase(),changes: keyss,),
+              NormalText(text: "Services".toUpperCase()),
                   SizedBox(width: 40,),
-              NormalText(text: "Contact Us".toUpperCase(),changes: keyss,),
+              NormalText(text: "Contact Us".toUpperCase()),
                  SizedBox(width: 40,),
       
             ],
