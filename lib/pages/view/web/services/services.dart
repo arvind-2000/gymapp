@@ -442,7 +442,8 @@ class ServiceCard extends StatelessWidget {
     return SizedBox(
       height: 450,
       width: 300,
-      child: CardWithShadow(radius: BorderRadius.zero, child: child),
+      child: CardWithShadow(
+        radius: BorderRadius.zero, child: child),
     );
   }
 }

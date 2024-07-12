@@ -9,7 +9,7 @@ class PricingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 550,
+      height: 300,
       width: 300,
       child: CardWithShadow(
         radius: BorderRadius.zero,

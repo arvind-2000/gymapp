@@ -8,8 +8,8 @@ class Responsivecontainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return MediaQuery.sizeOf(context).width<700?Column(
       children: [
-             Expanded(child: child1??SizedBox()),
-        Expanded(child: child2??SizedBox())
+            child1==null?const SizedBox():Expanded(child: child1??const SizedBox()),
+        child2==null?const SizedBox():Expanded(child: child2??const SizedBox())
       ],
     ):Row(
       children:[
