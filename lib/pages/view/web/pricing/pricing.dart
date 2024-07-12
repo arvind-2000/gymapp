@@ -108,7 +108,7 @@ class PricingScreen extends StatelessWidget {
                 
                 PricingCard(child: PricingInfo(type: "Personal",discount: pagectrl.pricingindex==0?"15":pagectrl.pricingindex==1?"20":"25",monthlyamount: "Rs 3500",months:pagectrl.pricingindex==0?"3 months":pagectrl.pricingindex==1?"6 months":"12 months",price:pagectrl.pricingindex==0?"Rs 8920":pagectrl.pricingindex==1?"Rs 16800":"Rs 31500",),),
                     const SizedBox(width: 40,),
-                 PricingCard(child: PricingInfo(type: "General",discount: "15",monthlyamount: "3500",months: "3 Months",price: "Rs 19820",),),
+                  PricingCard(child: PricingInfo(type: "General",discount: pagectrl.pricingindex==0?null:pagectrl.pricingindex==1?"20":"25",monthlyamount: "Rs 1500",months:pagectrl.pricingindex==0?"3 months":pagectrl.pricingindex==1?"6 months":"12 months",price:pagectrl.pricingindex==0?"Rs ${1500*3}":pagectrl.pricingindex==1?"Rs 7200":"Rs 13500",),),
                   ],
                 ),
               ),

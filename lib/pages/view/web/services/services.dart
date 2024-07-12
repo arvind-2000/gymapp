@@ -33,393 +33,410 @@ class ServicesScreen extends StatelessWidget {
                     ]),
                 child: Image.asset(
                   'assets/images/build.jpg',
-                  fit: MediaQuery.sizeOf(context).width > 700
-                      ? BoxFit.cover
-                      : BoxFit.contain,
+                  fit: BoxFit.cover,
                   filterQuality: FilterQuality.low,
                 ),
               )),
-              Positioned.fill(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+              Positioned(
+                right: 0,
+                top: 0,
+                bottom: 0,
+                left: 0,
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // NavBar(keyss:changescroll),
-                    ServiceCard(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                    SizedBox(height: 50,),
+                    Expanded(
+                      flex: 3,
+                      child: ListView(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        // crossAxisAlignment: CrossAxisAlignment.center,
+                        // mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Stack(
-                            children: [
-                              SizedBox(
-                                height: 200,
-                                width: 300,
-                                child: OverlayCard(
-                                    gradient: LinearGradient(
-                                        begin: Alignment.topCenter,
-                                        end: Alignment.bottomCenter,
-                                        colors: [
-                                          Theme.of(context).colorScheme.primary,
-                                          Theme.of(context)
-                                              .colorScheme
-                                              .primary
-                                              .withOpacity(0.7),
-                                          Theme.of(context).colorScheme.primary
-                                        ]),
-                                    child: Image.asset(
-                                      "assets/images/build.jpg",
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              Positioned(
-                                right: 0,
-                                top: 0,
-                                left: 0,
-                                bottom: 0,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                          // NavBar(keyss:changescroll),
+                          ServiceCard(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Stack(
                                   children: [
-                                    Text(
-                                      'BMI',
-                                      style: TextStyle(
-                                          fontSize: 30,
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .surface),
+                                    SizedBox(
+                                      height: 200,
+                                      width: 300,
+                                      child: OverlayCard(
+                                          gradient: LinearGradient(
+                                              begin: Alignment.topCenter,
+                                              end: Alignment.bottomCenter,
+                                              colors: [
+                                                Theme.of(context).colorScheme.primary,
+                                                Theme.of(context)
+                                                    .colorScheme
+                                                    .primary
+                                                    .withOpacity(0.7),
+                                                Theme.of(context).colorScheme.primary
+                                              ]),
+                                          child: Image.asset(
+                                            "assets/images/build.jpg",
+                                            fit: BoxFit.cover,
+                                          )),
                                     ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    const Text(
-                                      'Rs 200',
-                                      style: TextStyle(
-                                          fontSize: 26,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: SingleChildScrollView(
+                                    Positioned(
+                                      right: 0,
+                                      top: 0,
+                                      left: 0,
+                                      bottom: 0,
                                       child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
                                           Text(
-                                            "First time free for members",
+                                            'BMI',
                                             style: TextStyle(
-                                                fontSize: 14,
+                                                fontSize: 30,
                                                 color: Theme.of(context)
                                                     .colorScheme
-                                                    .surface
-                                                    .withOpacity(0.6)),
-                                            textAlign: TextAlign.center,
+                                                    .surface),
+                                          ),
+                                          const SizedBox(
+                                            height: 10,
+                                          ),
+                                          const Text(
+                                            'Rs 200',
+                                            style: TextStyle(
+                                                fontSize: 26,
+                                                fontWeight: FontWeight.bold),
                                           ),
                                         ],
                                       ),
                                     ),
-                                  ),
-                                  ActionButton(onpress: () {}, text: "Order")
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-
-                    SizedBox(
-                      width: 30,
-                    ),
-                    ServiceCard(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Stack(
-                            children: [
-                              SizedBox(
-                                height: 200,
-                                width: 300,
-                                child: OverlayCard(
-                                    gradient: LinearGradient(
-                                        begin: Alignment.topCenter,
-                                        end: Alignment.bottomCenter,
-                                        colors: [
-                                          Theme.of(context).colorScheme.primary,
-                                          Theme.of(context)
-                                              .colorScheme
-                                              .primary
-                                              .withOpacity(0.7),
-                                          Theme.of(context).colorScheme.primary
-                                        ]),
-                                    child: Image.asset(
-                                      "assets/images/build.jpg",
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              Positioned(
-                                right: 0,
-                                top: 0,
-                                left: 0,
-                                bottom: 0,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Steam Bath',
-                                      style: TextStyle(
-                                          fontSize: 30,
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .surface),
-                                    ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    const Text(
-                                      'Rs 300',
-                                      style: TextStyle(
-                                          fontSize: 26,
-                                          fontWeight: FontWeight.bold),
-                                    ),
                                   ],
                                 ),
-                              ),
-                            ],
-                          ),
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: SingleChildScrollView(
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            "30 mins per head",
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .surface
-                                                    .withOpacity(0.6)),
-                                            textAlign: TextAlign.center,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  ActionButton(onpress: () {}, text: "Order")
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-
-                    const SizedBox(
-                      width: 30,
-                    ),
-                    ServiceCard(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Stack(
-                            children: [
-                              SizedBox(
-                                height: 200,
-                                width: 300,
-                                child: OverlayCard(
-                                    gradient: LinearGradient(
-                                        begin: Alignment.topCenter,
-                                        end: Alignment.bottomCenter,
-                                        colors: [
-                                          Theme.of(context).colorScheme.primary,
-                                          Theme.of(context)
-                                              .colorScheme
-                                              .primary
-                                              .withOpacity(0.7),
-                                          Theme.of(context).colorScheme.primary
-                                        ]),
-                                    child: Image.asset(
-                                      "assets/images/build.jpg",
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              Positioned(
-                                right: 0,
-                                top: 0,
-                                left: 0,
-                                bottom: 0,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Massage Chair',
-                                      style: TextStyle(
-                                          fontSize: 30,
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .surface),
-                                    ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        const Text(
-                                          'Rs 400',
-                                          style: TextStyle(
-                                              fontSize: 26,
-                                              fontWeight: FontWeight.bold),
+                                        Expanded(
+                                          child: SingleChildScrollView(
+                                            child: Column(
+                                              children: [
+                                                Text(
+                                                  "First time free for members",
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .surface
+                                                          .withOpacity(0.6)),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
                                         ),
-                                        const SizedBox(
-                                          width: 5,
-                                        ),
-                                        Text(
-                                          '30 mins',
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.bold,
-                                              color: Theme.of(context)
-                                                  .colorScheme
-                                                  .surface
-                                                  .withOpacity(0.6)),
-                                        ),
+                                        ActionButton(onpress: () {}, text: "Order")
                                       ],
                                     ),
-                                  ],
-                                ),
-                              ),
-                            ],
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: SingleChildScrollView(
+                      
+                          SizedBox(
+                            width: 30,
+                          ),
+                          ServiceCard(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Stack(
+                                  children: [
+                                    SizedBox(
+                                      height: 200,
+                                      width: 300,
+                                      child: OverlayCard(
+                                          gradient: LinearGradient(
+                                              begin: Alignment.topCenter,
+                                              end: Alignment.bottomCenter,
+                                              colors: [
+                                                Theme.of(context).colorScheme.primary,
+                                                Theme.of(context)
+                                                    .colorScheme
+                                                    .primary
+                                                    .withOpacity(0.7),
+                                                Theme.of(context).colorScheme.primary
+                                              ]),
+                                          child: Image.asset(
+                                            "assets/images/build.jpg",
+                                            fit: BoxFit.cover,
+                                          )),
+                                    ),
+                                    Positioned(
+                                      right: 0,
+                                      top: 0,
+                                      left: 0,
+                                      bottom: 0,
                                       child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              const Icon(Icons.alarm, size: 12),
-                                              Text(
-                                                "30 mins",
-                                                style: TextStyle(
-                                                    fontSize: 14,
-                                                    color: Theme.of(context)
-                                                        .colorScheme
-                                                        .surface
-                                                        .withOpacity(0.6)),
-                                                textAlign: TextAlign.center,
-                                              ),
-                                            ],
+                                          Text(
+                                            'Steam Bath',
+                                            style: TextStyle(
+                                                fontSize: 30,
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .surface),
                                           ),
                                           const SizedBox(
                                             height: 10,
                                           ),
-                                          Text(
-                                            "Rs 300 (Xtremer)",
+                                          const Text(
+                                            'Rs 300',
                                             style: TextStyle(
-                                                fontSize: 14,
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .surface
-                                                    .withOpacity(0.6)),
-                                            textAlign: TextAlign.center,
-                                          ),
-                                          const SizedBox(
-                                            height: 5,
-                                          ),
-                                          Text(
-                                            "Rs 400 (Outsider)",
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .surface
-                                                    .withOpacity(0.6)),
-                                            textAlign: TextAlign.center,
-                                          ),
-                                          const SizedBox(
-                                            height: 30,
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Icon(Icons.alarm, size: 12),
-                                              Text(
-                                                "60 mins",
-                                                style: TextStyle(
-                                                    fontSize: 14,
-                                                    color: Theme.of(context)
-                                                        .colorScheme
-                                                        .surface
-                                                        .withOpacity(0.6)),
-                                                textAlign: TextAlign.center,
-                                              ),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(
-                                            "Rs 500 (Xtremer)",
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .surface
-                                                    .withOpacity(0.6)),
-                                            textAlign: TextAlign.center,
-                                          ),
-                                          SizedBox(
-                                            height: 5,
-                                          ),
-                                          Text(
-                                            "Rs 700 (Outsider)",
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .surface
-                                                    .withOpacity(0.6)),
-                                            textAlign: TextAlign.center,
+                                                fontSize: 26,
+                                                fontWeight: FontWeight.bold),
                                           ),
                                         ],
                                       ),
                                     ),
+                                  ],
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Expanded(
+                                          child: SingleChildScrollView(
+                                            child: Column(
+                                              children: [
+                                                Text(
+                                                  "30 mins per head",
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .surface
+                                                          .withOpacity(0.6)),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        ActionButton(onpress: () {}, text: "Order")
+                                      ],
+                                    ),
                                   ),
-                                  ActionButton(onpress: () {}, text: "Order")
-                                ],
-                              ),
+                                )
+                              ],
                             ),
-                          )
+                          ),
+                      
+                          const SizedBox(
+                            width: 30,
+                          ),
+                          ServiceCard(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Stack(
+                                  children: [
+                                    SizedBox(
+                                      height: 200,
+                                      width: 300,
+                                      child: OverlayCard(
+                                          gradient: LinearGradient(
+                                              begin: Alignment.topCenter,
+                                              end: Alignment.bottomCenter,
+                                              colors: [
+                                                Theme.of(context).colorScheme.primary,
+                                                Theme.of(context)
+                                                    .colorScheme
+                                                    .primary
+                                                    .withOpacity(0.7),
+                                                Theme.of(context).colorScheme.primary
+                                              ]),
+                                          child: Image.asset(
+                                            "assets/images/build.jpg",
+                                            fit: BoxFit.cover,
+                                          )),
+                                    ),
+                                    Positioned(
+                                      right: 0,
+                                      top: 0,
+                                      left: 0,
+                                      bottom: 0,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'Massage Chair',
+                                            style: TextStyle(
+                                                fontSize: 30,
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .surface),
+                                          ),
+                                          const SizedBox(
+                                            height: 10,
+                                          ),
+                                          Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              const Text(
+                                                'Rs 400',
+                                                style: TextStyle(
+                                                    fontSize: 26,
+                                                    fontWeight: FontWeight.bold),
+                                              ),
+                                              const SizedBox(
+                                                width: 5,
+                                              ),
+                                              Text(
+                                                '30 mins',
+                                                style: TextStyle(
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Theme.of(context)
+                                                        .colorScheme
+                                                        .surface
+                                                        .withOpacity(0.6)),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Expanded(
+                                          child: SingleChildScrollView(
+                                            child: Column(
+                                              children: [
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    const Icon(Icons.alarm, size: 12),
+                                                    Text(
+                                                      "30 mins",
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          color: Theme.of(context)
+                                                              .colorScheme
+                                                              .surface
+                                                              .withOpacity(0.6)),
+                                                      textAlign: TextAlign.center,
+                                                    ),
+                                                  ],
+                                                ),
+                                                const SizedBox(
+                                                  height: 10,
+                                                ),
+                                                Text(
+                                                  "Rs 300 (Xtremer)",
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .surface
+                                                          .withOpacity(0.6)),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                                const SizedBox(
+                                                  height: 5,
+                                                ),
+                                                Text(
+                                                  "Rs 400 (Outsider)",
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .surface
+                                                          .withOpacity(0.6)),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                                const SizedBox(
+                                                  height: 30,
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Icon(Icons.alarm, size: 12),
+                                                    Text(
+                                                      "60 mins",
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          color: Theme.of(context)
+                                                              .colorScheme
+                                                              .surface
+                                                              .withOpacity(0.6)),
+                                                      textAlign: TextAlign.center,
+                                                    ),
+                                                  ],
+                                                ),
+                                                SizedBox(
+                                                  height: 10,
+                                                ),
+                                                Text(
+                                                  "Rs 500 (Xtremer)",
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .surface
+                                                          .withOpacity(0.6)),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                                SizedBox(
+                                                  height: 5,
+                                                ),
+                                                Text(
+                                                  "Rs 700 (Outsider)",
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .surface
+                                                          .withOpacity(0.6)),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        ActionButton(onpress: () {}, text: "Order")
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
+                    Expanded(
+                      flex: 2,
+                      child: SizedBox())
                   ],
                 ),
               ),
@@ -443,6 +460,7 @@ class ServiceCard extends StatelessWidget {
       height: 450,
       width: 300,
       child: CardWithShadow(
+        margin: EdgeInsets.symmetric(horizontal: 16),
         radius: BorderRadius.zero, child: child),
     );
   }

@@ -12,6 +12,7 @@ class PricingCard extends StatelessWidget {
       height: 300,
       width: 300,
       child: CardWithShadow(
+        margin: EdgeInsets.symmetric(horizontal: 16),
         radius: BorderRadius.zero,
         isBorder: true,
         padding: const EdgeInsets.all(16),

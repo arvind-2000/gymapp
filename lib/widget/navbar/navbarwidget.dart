@@ -23,29 +23,13 @@ class NavBar extends StatelessWidget {
           ),
            MediaQuery.sizeOf(context).width<800?const SizedBox():Row(
                 children: [
-                  InkWell(
-                    onTap: (){
-                       pagetcontroller.changeScrolltoScreen(0);
-                    },
-                    child: NormalText(text: "Home".toUpperCase(),color: pagetcontroller.index == 0?Theme.of(context).colorScheme.secondary:null,),),
+                  NavbarTap(pagetcontroller: pagetcontroller,text: "Home",index: 0,),
                      const  SizedBox(width: 40,),
-                  InkWell(
-                    onTap: (){
-                      pagetcontroller.changeScrolltoScreen(1);
-                    },
-                    child: NormalText(text: "Pricing".toUpperCase(),color: pagetcontroller.index == 1?Theme.of(context).colorScheme.secondary:null,)),
+             NavbarTap(pagetcontroller: pagetcontroller,text: "Pricing",index: 1,),
                           const  SizedBox(width: 40,),
-                  InkWell(
-                    onTap: (){
-                      pagetcontroller.changeScrolltoScreen(2);
-                    },
-                    child: NormalText(text: "Services".toUpperCase(),color: pagetcontroller.index == 2?Theme.of(context).colorScheme.secondary:null,)),
+                    NavbarTap(pagetcontroller: pagetcontroller,text: "Services",index: 3,),
                      const  SizedBox(width: 40,),
-                  InkWell(
-                    onTap: (){
-                      pagetcontroller.changeScrolltoScreen(3);
-                    },
-                    child: NormalText(text: "Contact Us".toUpperCase(),color: pagetcontroller.index == 3?Theme.of(context).colorScheme.secondary:null,)),
+    NavbarTap(pagetcontroller: pagetcontroller,text: "Contact Us",index: 3,),
                      const  SizedBox(width: 40,),
           
                 ],
@@ -69,3 +53,35 @@ class NavBar extends StatelessWidget {
     );
   }
 }
+
+class NavbarTap extends StatefulWidget {
+  const NavbarTap({
+    super.key,
+    required this.pagetcontroller, required this.text, required this.index,
+    
+  });
+  final int index;
+
+  final PageGetController pagetcontroller;
+    final String text;
+
+  @override
+  State<NavbarTap> createState() => _NavbarTapState();
+}
+
+class _NavbarTapState extends State<NavbarTap> {
+  bool _hover = false;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: (){
+         widget.pagetcontroller.changeScrolltoScreen(widget.index);
+      },
+      onHover: (v){
+        setState(() {
+          _hover = v;
+        });
+      },
+      child: NormalText(text: widget.text.toUpperCase(),color:_hover?Theme.of(context).colorScheme.secondary.withOpacity(0.5) : widget.pagetcontroller.index == widget.index?Theme.of(context).colorScheme.secondary:null,),);
+  }
+  }
