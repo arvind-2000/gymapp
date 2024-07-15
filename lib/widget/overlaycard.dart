@@ -16,7 +16,7 @@ class OverlayCard extends StatelessWidget {
         Container(
     clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
-            
+          
             gradient:gradient??LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,

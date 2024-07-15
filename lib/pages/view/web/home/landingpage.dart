@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gymwebapp/config/const.dart';
 import 'package:gymwebapp/controller/pagegetcontroller.dart';
+import 'package:gymwebapp/pages/view/web/auths/forgotpasswordscreen.dart';
+import 'package:gymwebapp/pages/view/web/auths/loginscreen.dart';
+import 'package:gymwebapp/pages/view/web/auths/signup.dart';
+import 'package:gymwebapp/pages/view/web/services/services.dart';
 import 'package:gymwebapp/widget/actionbutton.dart';
 import 'package:gymwebapp/widget/cardwithshadow.dart';
 
@@ -20,7 +24,7 @@ class LandingPage extends StatelessWidget {
     return GetBuilder<PageGetController>(
       builder: (pagecontroller) {
         return Container(
-          height: MediaQuery.sizeOf(context).width<700?500:800,
+          height: MediaQuery.sizeOf(context).width<700?pagecontroller.menu?700: 500:800,
           child:Stack(
               children: [
                 Positioned.fill(
@@ -90,7 +94,7 @@ class LandingPage extends StatelessWidget {
                           ],
                         ),
                         child2: MediaQuery.sizeOf(context).width<700?null:Center(
-                          child: SizedBox(
+                          child:pagecontroller.showlogin?pagecontroller.authpage==1?SignUpPage().animate().slideX(begin: 1,end: 0,duration: Durations.extralong1).fade():pagecontroller.authpage==2?ForgotPassWordScreen().animate().slideX(begin: 1,end: 0,duration: Durations.extralong1).fade():LoginScreen().animate().slideX(begin: 1,end: 0,duration: Durations.extralong1).fade() :SizedBox(
                             height: 300,
                             width: 300,
                             child: CardWithShadow(

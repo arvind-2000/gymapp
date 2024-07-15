@@ -2,7 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gymwebapp/controller/pagegetcontroller.dart';
+import 'package:gymwebapp/controller/tapcontroller.dart';
 import 'package:gymwebapp/pages/view/web/contact/contact.dart';
+import 'package:gymwebapp/pages/view/web/gallery/galleryscreen.dart';
 import 'package:gymwebapp/pages/view/web/home/landingpage.dart';
 import 'package:gymwebapp/pages/view/web/pricing/pricing.dart';
 import 'package:gymwebapp/pages/view/web/services/services.dart';
@@ -36,6 +38,7 @@ class _ScreenHandlerPageState extends State<ScreenHandlerPage> with TickerProvid
   void initState() {
     super.initState();
     Get.put(PageGetController()).onInit();
+    Get.put(GetxTapController()).onInit();
 
 
  
@@ -246,8 +249,8 @@ class _ScreenHandlerPageState extends State<ScreenHandlerPage> with TickerProvid
                     
                     itemScrollController: pagetcontroller.scrollController,
                     initialScrollIndex: 0,
-                      itemCount: 4,
-                      itemBuilder: (context, index) =>index == 0?LandingPage():index==1?PricingScreen():index==2?const ServicesScreen():const ContactUsScreen() ,
+                      itemCount: 5,
+                      itemBuilder: (context, index) =>index == 0?LandingPage():index==1?PricingScreen():index==2?const ServicesScreen():index==3?const GalleryScreen():const ContactUsScreen() ,
                   ),
                 )
           
