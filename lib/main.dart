@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:gymwebapp/config/theme.dart';
 import 'package:gymwebapp/router/router.dart';
@@ -15,9 +16,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {PointerDeviceKind.mouse,PointerDeviceKind.touch}
+      ),
       routerConfig: _appRouter.config(),
       debugShowCheckedModeBanner: false,
-      theme: lightheme
+      theme: lightheme,
+      
     );
   }
 }

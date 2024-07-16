@@ -9,7 +9,8 @@ class CardWithShadow extends StatelessWidget {
   this.isshadow = false,
   this.radius,
   this.isGradient = false,
-  this.gradientcolor, this.shadowcolor
+  this.gradientcolor, this.shadowcolor, 
+  this.isBorder= false, this.boxshape = false
   });
   final Widget child;
   final EdgeInsets padding;
@@ -19,7 +20,9 @@ class CardWithShadow extends StatelessWidget {
   final bool isshadow;
   final BorderRadius? radius;
   final bool isGradient;
+  final bool isBorder;
   final List<Color>? gradientcolor;
+  final bool boxshape;
   @override 
   Widget build(BuildContext context) {
     return Container(
@@ -27,8 +30,10 @@ class CardWithShadow extends StatelessWidget {
       margin: margin,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
+        shape: boxshape?BoxShape.circle:BoxShape.rectangle,
+        border:isBorder?Border.all(color: Theme.of(context).colorScheme.secondary.withOpacity(0.7),width: 0.4):null,
         color: color??Theme.of(context).colorScheme.primary,
-        borderRadius: radius??BorderRadius.circular(8),
+        borderRadius:boxshape?null:radius??BorderRadius.circular(8),
         gradient: isGradient? LinearGradient(
           colors: gradientcolor??const [Color(0xff283048), Color(0xffdedede), Color(0xff858a98)],
           stops: [0, 0.5, 1],

@@ -13,5 +13,7 @@ class AppRouter extends $AppRouter {
           page: RouteHandlerPage.page,
         ),
         AutoRoute(path: '/formpage', page: GymFormPage.page),
+        AutoRoute(path: '/WebLoginPage', page: WebLoginPage.page),
+      
       ];
 }
